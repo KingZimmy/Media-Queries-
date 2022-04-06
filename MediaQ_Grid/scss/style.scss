@@ -1,0 +1,277 @@
+// Scss Document
+$headerColor: #06b2da;
+$navColor: #048abf;
+$bodyColor: #f2f2ea;
+$formColor: orange;
+
+#container {
+  width: 1000px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: $bodyColor;
+
+  header {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 400px 400px;
+    grid-template-columns: 400px 400px;
+    background: $headerColor;
+
+    h1 {
+      -ms-grid-column: 2;
+      -ms-grid-column-span: 1;
+      grid-column: 2 / 3;
+      margin-left: 20%;
+      margin-top: 20%;
+    }
+
+    img {
+      -ms-grid-column: 1;
+      grid-column-start: 2;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      vertical-align: middle;
+      border: 2px solid black;
+      margin-left: 80px;
+    }
+  }
+
+  nav {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 10% 10% 10% 10%;
+    grid-template-columns: 10% 10% 10% 10%;
+    text-align: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background: $navColor;
+    padding: 20px;
+
+    a {
+      color: black;
+      text-decoration: none;
+    }
+  }
+
+  .mainSection {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
+
+    .leftSection {
+      width: 500px;
+
+      .bigImg {
+        width: 50px;
+        margin-left: 20px;
+
+        img {
+          border: 2px solid black;
+          width: 430px;
+        }
+      }
+
+      .imageGallery img {
+        width: 130px;
+        height: 120px;
+        margin-left: 15px;
+        border: 2px solid black;
+      }
+    }
+
+    .rightSection {
+      padding: 20px;
+    }
+  }
+
+  .displayRight {
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    display: -ms-grid;
+    display: grid;
+
+    .leftText {
+      margin: 20px;
+    }
+
+    .rightText {
+      padding: 10px;
+    }
+  }
+
+  form {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto;
+    grid-template-columns: auto;
+    -ms-grid-rows: 60px 60px 60px;
+    grid-template-rows: 60px 60px 60px;
+    background-color: $formColor;
+    border: 2px solid black;
+    height: 360px;
+
+    h2 {
+      margin-left: 20px;
+    }
+
+    p {
+      font-size: 18px;
+
+      label {
+        text-align: right;
+        margin-left: 50px;
+      }
+
+      div {
+        background: orange;
+        display: none;
+      }
+    }
+
+    textarea {
+      margin-left: 30%;
+      margin-top: -10%;
+      width: 300px;
+      height: 50px;
+    }
+
+    input[type=text] {
+      width: 300px;
+      margin-left: 20px;
+    }
+
+    .message {
+      margin-left: -5px;
+    }
+  }
+
+  input {
+    &[type=submit] {
+      background-color: #038BBC;
+      margin-left: 30%;
+    }
+
+    &[type=reset] {
+      background-color: #F14407;
+      margin-left: 10px;
+    }
+
+    &[type=submit], &[type=reset] {
+      font-size: 15px;
+      color: white;
+      padding: 5px;
+      border-radius: 8px;
+    }
+  }
+
+  footer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: auto auto;
+    grid-template-columns: auto auto;
+    text-align: left;
+    background: $navColor;
+    color: black;
+
+    div {
+      text-align: right;
+    }
+
+    img {
+      width: 50px;
+      margin-right: 20px;
+    }
+
+    h1 {
+      -ms-grid-column: 1;
+      -ms-grid-column-span: 1;
+      grid-column: 1 /span 1;
+      margin-left: 30px;
+    }
+  }
+}
+/* Media Query */
+@media screen and (max-width: 430px) {
+	#container {
+		width: 100%;
+		display: block;
+		header {
+			padding: 25px;
+			margin: 0;
+			display: block;
+			img {
+				width: 300px;
+				margin: 0;
+				padding: 0;
+			}
+			h1 {
+				margin: 0;
+				padding: 10px;
+			}
+		}
+		nav {
+			display: block;
+			padding-left: 20px;
+			a {
+				margin-left: 15px;
+			}
+		}
+		.mainSection {
+			display: grid;
+			grid-template-columns: auto;
+			.leftSection {
+				display: block;
+				width: 100%;
+				.bigImg {
+					margin-left: 15px;
+					img {
+						width: 300px;
+					}
+				}
+				.imageGallery {
+					display: block;
+					img {
+						width: 100px;
+						height: 100px;
+					}
+				}
+			}
+			form {
+				width: 100%;
+				display: block;
+				input[type=text] {
+					width: 50%;
+					margin-left: 15px;
+					margin-bottom: 10px;
+				}
+				.message {
+					width: 100%;
+					margin-top: 40px;
+					margin-left: 20px;
+					label {
+						margin-left: 10px;
+					}
+				}
+				textarea {
+					width: 55%;
+				}
+				input[type=submit] {
+					margin-left: 35%;
+				}
+			}
+		}
+		footer {
+			display: grid;
+			grid-template-columns: auto auto;
+			img {
+				width: 40px;
+				height: 40px;
+			}
+		}
+	}
+}
